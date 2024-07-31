@@ -1,0 +1,11 @@
+.month-item {
+    width: 14%;
+    text-align: center;
+}
+.month-date {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
