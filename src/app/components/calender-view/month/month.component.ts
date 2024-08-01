@@ -4,6 +4,7 @@ import { MatButton, MatFabButton } from '@angular/material/button';
 import { MatCard } from '@angular/material/card';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import moment from 'moment';
+import { EventManagerService } from '../../../services/event-manager.service';
 @Component({
   selector: 'app-month',
   standalone: true,
@@ -20,6 +21,8 @@ export class MonthComponent implements OnInit {
   public selectedMonth: number = new Date().getMonth();
   public selectedYear: number = new Date().getFullYear();
   public selectedDate: number = new Date().getDate();
+
+  constructor(private eventService: EventManagerService) {}
 
   ngOnInit(): void {
     const now = new Date()
@@ -68,7 +71,8 @@ export class MonthComponent implements OnInit {
     if(direction) {
       this.navigateMonth(direction);
     }
-    this.selectedDate = date.getDate()
+    this.selectedDate = date.getDate();
+    this.eventService.createEvent()
   }
   private reset():void {
     this.currDates = [];
