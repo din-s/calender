@@ -1,3 +1,6 @@
+.month-header {
+    min-width: 30%;
+}
 .month-item {
     width: 14%;
     text-align: center;
@@ -8,4 +11,13 @@
     flex-direction: column;
     border-radius: 0.25rem;
     padding: 0.5rem;
+
+    &.faded {
+        background-color: rgb(188, 185, 185);
+    }
+    
+    &.selected {
+        background-color: lightblue;
+        border: 1px solid darkblue;
+    }
 }
